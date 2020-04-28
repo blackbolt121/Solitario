@@ -1,0 +1,31 @@
+﻿  carta.cpp
+  gotoxy.cpp
+  juego.cpp
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\juego.cpp(151,13): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\juego.cpp(198,13): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\juego.cpp(238,12): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\List.h(127,20): warning C4101: 'error': variable local sin referencia
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\List.h(114): message : al compilar la función del miembro clase plantilla "Nodo<T> *List<T>::getByIndex(const int &)"
+          with
+          [
+              T=carta
+          ]
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\juego.cpp(65): message : Vea la referencia a la creación de una instancia de la función plantilla "Nodo<T> *List<T>::getByIndex(const int &)" que se está compilando
+          with
+          [
+              T=carta
+          ]
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\juego.h(31): message : Vea la referencia a la creación de una instancia de clase plantilla "List<carta>" que se está compilando
+  jugador.cpp
+  maso.cpp
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\stack.h(63,13): warning C4101: 'exp': variable local sin referencia
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\stack.h(58): message : al compilar la función del miembro clase plantilla "frame<carta> *stack<carta>::getPeek(void)"
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\maso.cpp(19): message : Vea la referencia a la creación de una instancia de la función plantilla "frame<carta> *stack<carta>::getPeek(void)" que se está compilando
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\maso.h(27): message : Vea la referencia a la creación de una instancia de clase plantilla "stack<carta>" que se está compilando
+  pilaAuxiliar.cpp
+  pilaDeJuego.cpp
+  run.cpp
+  Source.cpp
+  Generando código...
+C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Solitario\run.cpp(291): warning C4717: 'operaciones': recursiva para todas las rutas de acceso de control; la función provocará el desbordamiento de la pila en tiempo de ejecución
+  Solitario.vcxproj -> C:\Users\rgo19\Documents\C++\Visual Studio\Solitario\Debug\Solitario.exe
