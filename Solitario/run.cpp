@@ -3,7 +3,9 @@
 #include <algorithm>
 using namespace std;
 void run(int numero, juego *&a) {
-
+	if (a->hasGanado() == true) {
+		run(7, a);
+	}
 	if (a != nullptr) {
 		do {
 			switch (numero) {
@@ -41,10 +43,19 @@ void run(int numero, juego *&a) {
 				system("Pause");
 				system("cls");
 				run(menu(), a);
+				break;
 			case 6:
 				a->mezclarNuevamenteCartasSobrantes();
 				system("cls");
 				run(menu(), a);
+				break;
+			case 7:
+				if (a->hasGanado() == true) {
+					std::cout << "Has ganado..." << std::endl;
+				}
+				else {
+					run(1, a);
+				}
 			case 20:
 				system("cls");
 				std::cout << "Adios..." << std::endl;
@@ -126,6 +137,9 @@ void operaciones(int x, juego*& a)
 		{
 			if (a->sacarCartaDeCartasSobrantes()) 
 				std::cout << "Operacion realizada con exito" << std::endl;
+				if (a->Jugador().isInsertarEnSobrantes() == false) {
+					a->Jugador().setIsInsertarEnSobrantes();
+				}
 			else 
 				std::cout << "Ocurrio un error" << std::endl;
 			system("Pause");
@@ -146,22 +160,18 @@ void operaciones(int x, juego*& a)
 		cin >> aux;
 		aux--;
 		if (0 <= aux and aux < 7) {
-			if (a->Jugador().obtenerEnMano() != nullptr) {
-				if (a->insertarCartaEnPilaDelJuego(aux) == true) {
-					std::cout << "La carta ha sido colocada con exito"<< std::endl;
-				}
-				else {
-					std::cout << "La carta no ha sido colocada en la pila indicada" << std::endl;
-					goto volver2;
-				}
+			if (a->insertarCartaEnPilaDelJuego(aux) == true) {
+				std::cout << "La carta ha sido colocada con exito" << std::endl;
 			}
 			else {
-				std::cout << "Usted no puede realizar esta operación" << std::endl;
+				std::cout << "La carta no ha sido colocada en la pila indicada" << std::endl;
+				goto volver2;
 			}
-			system("Pause");
 		}
 		else {
-			if (aux == 9) {
+			if (aux == 8) {
+				std::cout << "Saliendo" << std::endl;
+				system("Pause");
 				operaciones(99, a);
 			}
 			else {
@@ -238,7 +248,7 @@ void operaciones(int x, juego*& a)
 		run(99, a);
 	case 97:
 		std::system("cls");
-		std::cin.ignore();
+		std::fflush(stdin);
 		std::cout << "Desea realizar una nueva operacion (Si/No): " << std::endl;
 		std::fflush(stdin);
 		std::getline(std::cin, rpt, '\n');
@@ -281,7 +291,14 @@ void operaciones(int x, juego*& a)
 		std::cout << "6.- Volver al menu" << std::endl;;
 		std::cout << "---->";
 		cin >> aux;
-		operaciones(aux, a);
+		if (a->Jugador().obtenerEnMano() == nullptr and 3 <= aux and aux <= 5){
+			std::cout << "Usted no puede hacer esta operacion tiene la mano vacia..." << std::endl;
+			system("Pause");
+			operaciones(99, a);
+		}
+		else {
+			operaciones(aux, a);
+		}
 		break;
 
 	default:

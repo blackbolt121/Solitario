@@ -169,7 +169,7 @@ template <class T>
 void List<T>::insertByIndex(const T& dato, const int& index) {
 	try {
 		if (index < n and 0 <= index) {
-			Nodo<T>* aux = new Nodo(dato);
+			Nodo<T>* aux = new Nodo<T>(dato);
 			Nodo<T>* obj = this->getByIndex(index);
 			obj->getLast()->setNext(aux); //El elemento anterior al nodo configuramos su siguiente para que apunte al nuevo nodo
 			aux->setLast(obj->getLast()); //El elemento anterior del nuevo nodo es el elemento anterior del nodo que ocupa el indice dado de la función

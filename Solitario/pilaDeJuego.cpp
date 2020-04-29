@@ -11,10 +11,10 @@ bool pilaDeJuego::push(carta s)
 {
 	if (this->getPeek() != nullptr) 
 	{
-		if (this->getPeek()->getItem()->getPalo().compare("corazones") == 0 or this->getPeek()->getItem()->getPalo().compare("diamantes") == 0) 
+		if (this->getPeek()->getItem()->getPalo().compare("co") == 0 or this->getPeek()->getItem()->getPalo().compare("diam") == 0) 
 			//Este condicional revisa si pertenece a un palo que sea rojo, de lo contrario es negro
 		{
-			if (s.getPalo().compare("picas") == 0 or s.getPalo().compare("treboles") == 0) 
+			if (s.getPalo().compare("pic") == 0 or s.getPalo().compare("tre") == 0) 
 			 //Este condicional revisa que el palo de la carta que se desea insertar sea de un color opuesto al rojo
 			{
 				if (((this->getPeek()->getItem()->getNumero() - 1) == s.getNumero()))
@@ -33,7 +33,7 @@ bool pilaDeJuego::push(carta s)
 		}
 		else 
 		{
-			if (s.getPalo().compare("corazones") == 0 or s.getPalo().compare("diamantes") == 0)
+			if (s.getPalo().compare("co") == 0 or s.getPalo().compare("diam") == 0)
 				//Este condicional revisa que el palo de la carta que se desea insertar sea de un color opuesto al negro 
 			{
 				if ((this->getPeek()->getItem()->getNumero() - 1) == s.getNumero())

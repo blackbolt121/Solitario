@@ -1,7 +1,5 @@
 #include "carta.h"
-carta::carta() {
-
-}
+carta::carta() {}
 carta::carta(int x) {
 	this->visible = true;
 	if( x <= 0 or x>52 ) throw -1;

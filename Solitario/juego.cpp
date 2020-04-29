@@ -17,7 +17,6 @@ bool juego::sacarCartaDeCartasSobrantes()
 {
 	carta* s = this->jdor.obtenerEnMano();
 	if (s == nullptr) {
-		this->jdor.setIsInsertarEnSobrantes();
 		carta aux = this->cartasSobrantes->pop();
 		this->jdor.insertarMano(aux);
 		return true;
@@ -269,4 +268,22 @@ void juego::mezclarNuevamenteCartasSobrantes()
 jugador juego::Jugador()
 {
 	return this->jdor;
+}
+
+bool juego::hasGanado()
+{
+	for (int i = 0; i < 7; i++) {
+		if (this->pilasDelJuego[i]->length() != 0) {
+			return false;
+		}
+	}
+	for (int i = 0; i < 4; i++) {
+		if (this->palos[i]->length() != 13) {
+			return false;
+		}
+	}
+	if (this->cartasSobrantes->length() != 0) {
+		return false;
+	}
+	return true;
 }

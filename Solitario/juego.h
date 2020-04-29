@@ -22,7 +22,7 @@ public:
 	void imprimirCartasSobrantes();
 	void mezclarNuevamenteCartasSobrantes();
 	jugador Jugador();
-	
+	bool hasGanado();
 private:
 	jugador jdor;
 	pilaAuxiliar *palos[4];
